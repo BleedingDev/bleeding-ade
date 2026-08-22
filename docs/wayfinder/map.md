@@ -30,7 +30,7 @@ An evidence-backed, decision-complete product and architecture definition for Bl
 
 ## Decisions so far
 
-<!-- Empty until a decision ticket is resolved and closed. Owner-set constraints above are inputs to the map, not duplicated decision records. -->
+- [Define the job BleedingADE must be hired to do](https://github.com/BleedingDev/bleeding-ade/issues/3): build a self-hostable, federated T3-style client/server control plane where one human plans through user-supplied skills, converts plans into Beads, and supervises or hands over 5–100+ long-running agent workstreams across 2–10 machines from any authorized device, with complete semantic history and no assumed role for Herdr.
 
 ## Not yet specified
 
