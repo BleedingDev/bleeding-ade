@@ -8,6 +8,14 @@ No production implementation yet. This repository is first resolving the product
 
 Implementation starts only after the final Wayfinder handoff decision closes.
 
+## Live Wayfinder
+
+- **[Canonical decision map](https://github.com/BleedingDev/bleeding-ade/issues/2)** — one map, 18 decision tickets, five-ticket initial frontier.
+- **[Current claimed ticket: Define the job BleedingADE must be hired to do](https://github.com/BleedingDev/bleeding-ade/issues/3)**
+- [All discovery issues](https://github.com/BleedingDev/bleeding-ade/issues?q=is%3Aissue+is%3Aopen+label%3Aphase%3Adiscovery)
+
+GitHub issues are the canonical live decision record. Repository documents provide durable context and architecture evidence.
+
 ## Strong product priors
 
 - Extend T3 Code coherently rather than build a disconnected prototype.
@@ -16,15 +24,16 @@ Implementation starts only after the final Wayfinder handoff decision closes.
 - Use AgentBox for isolated/resumable execution locations where it earns that role.
 - Treat Herdr as a candidate capability, not a mandatory architecture layer.
 - Support T3 Code providers plus Oh My Pi, Prime Agent/RLM, and Claude Code with UltraCode workflows through typed capability-negotiated adapters.
-- Make Beads task state and a native graph/triage experience available inside BleedingADE. Reproduce the useful interaction model; do not embed or copy Beads Viewer.
+- Make Beads task state and native dependency, graph, triage, and insight functionality available inside BleedingADE. Reproduce useful capabilities; do not embed or copy Beads Viewer or the Wayfinder Obsidian plugin.
 - Keep terminal output as diagnostic provenance and fallback, never the primary information architecture.
-- Agent Mail, CASS, and other Agent Flywheel components are optional until their product value is proven.
+- Agent Mail, CASS, NTM, and other Agent Flywheel components are optional until their product value is proven.
+- Licensing is already handled and outside the Wayfinder scope.
 
-## Start here
+## Repository context
 
-- [Wayfinder map](docs/wayfinder/map.md)
+- [Initial product vision](docs/product/initial-vision.md)
 - [Architecture hypotheses](docs/architecture/hypotheses.md)
+- [Preliminary ecosystem baseline](docs/research/ecosystem-baseline.md)
 - [First grilling round](docs/wayfinder/grilling-round-1.md)
 - [Decision dependency graph](docs/wayfinder/dependency-graph.md)
-
-GitHub issues are the canonical live decision record once published.
+- [Repository mirror of the map](docs/wayfinder/map.md)
