@@ -7,8 +7,8 @@ This is evidence for Wayfinder tickets, not a final architecture decision. Every
 | T3 Code | [`pingdotgg/t3code`](https://github.com/pingdotgg/t3code) | Authenticated Effect RPC WebSocket; event-sourced orchestration; provider drivers; shared web/mobile client runtime; remote execution environments. | Which extensions remain upstream-friendly and which require a durable fork? |
 | AgentBox | [`madarco/agentbox`](https://github.com/madarco/agentbox) | Local/cloud box provider abstraction; lifecycle, checkpoints, pause/resume; Hub REST API for boxes, jobs, approvals, projects, and logs. | Should T3 run inside each box, and which control-plane writes are stable across all providers? |
 | Herdr | [`herdrdev/herdr`](https://github.com/herdrdev/herdr) | Persistent server-owned PTYs; local socket JSON schema; snapshots/events; agent control; terminal observer/controller; named and remote sessions. | Does it provide a narrow capability behind T3, or become a conflicting second owner? |
-| Beads | [`gastownhall/beads`](https://github.com/gastownhall/beads) | Dolt-backed dependency graph; atomic claims; structured CLI/JSON; graph links; cross-machine data sync. | Project-local canonical task store or optional adapter? |
-| Beads Viewer | [`Dicklesworthstone/beads_viewer`](https://github.com/Dicklesworthstone/beads_viewer) | Reads Beads exports; robot JSON/TOON; graph, critical path, PageRank, alerts, planning, and HTML export. | Which behaviors/algorithms should BleedingADE reproduce natively and which should remain optional analysis? |
+| Beads Rust (`br`) | [`Dicklesworthstone/beads_rust`](https://github.com/Dicklesworthstone/beads_rust) | Local-first SQLite task graph; JSONL git interchange/synchronization; structured JSON/TOON/robot CLI; capabilities, MCP, skills, coordination and recovery tooling. | Exact authority/sync contract across federated servers, and which mutations belong behind a thin `br` skill or server adapter? |
+| Beads Viewer | [`Dicklesworthstone/beads_viewer`](https://github.com/Dicklesworthstone/beads_viewer) | Reads Beads Rust-compatible JSONL; robot JSON/TOON; graph, critical path, PageRank, alerts, planning, and HTML export. | Which behaviors/algorithms should BleedingADE reproduce natively and which should remain optional analysis? |
 | Oh My Pi | [`can1357/oh-my-pi`](https://github.com/can1357/oh-my-pi) | Rich coding runtime; subagents; Agent Hub; ACP; collaboration; session restore and multiple provider/tool surfaces. | Stable headless lifecycle, transcript, tool, approval, and child-agent event boundary. |
 | Prime Agent | [`PrimeIntellect-ai/prime-agent`](https://github.com/PrimeIntellect-ai/prime-agent) | Daemon and RPC modes; persistent execution; RLM/recursive child-agent behavior. | Lossless parent/child lifecycle, tool, approval, and reconnect semantics. |
 | UltraCode workflows | Candidate Claude Code workflow layer; exact authoritative source must be pinned by research. | Workflow definitions, stages, progress/status, observation hooks, diagrams. | Whether progress can be observed semantically without parsing terminal output. |
@@ -37,7 +37,9 @@ The execution-topology decision must assign exactly one authoritative owner for 
 
 ### Beads Viewer is not the Beads database
 
-Beads' database is authoritative; exported JSONL is a viewer/interchange surface. BleedingADE should not make stale exports its write model. The likely direction is a typed Beads adapter plus a native responsive projection and analysis layer.
+`beads_rust` keeps its working task state in SQLite and exports/synchronizes through JSONL under explicit `br` commands. Beads Viewer consumes the compatible JSONL and derives analysis; it is not the task authority. BleedingADE should use supported `br` surfaces, provide a thin management skill/adapter, and build its own responsive projections rather than write Viewer output or maintain a competing task database.
+
+The separate `gastownhall/beads` Dolt architecture is comparative context only and is not BleedingADE's selected Beads implementation.
 
 ### Reconnection and migration are not synonyms
 
