@@ -8,7 +8,7 @@ An evidence-backed, decision-complete product and architecture definition for Bl
 
 **Mode:** planning only. This map resolves decisions; it does not implement the product.
 
-**Strong priors to test, not blindly enforce:** preserve T3 Code's client/server, semantic event-sourced architecture, terminal contracts, and first-party web/mobile terminal stack; federate independently operational BleedingADE servers; prioritize excellent web/mobile use; use a provider-neutral subordinate Placement boundary with AgentBox as the first optional adapter and Lima/Locki as a later research candidate; integrate Jeffrey Emanuel's `beads_rust` through supported `br` surfaces while providing a native graph/triage experience; support Oh My Pi, Prime Agent/RLM, and Claude Code workflows through typed adapters where truthful; require Herdr and broader Agent Flywheel components to prove distinct value.
+**Strong priors to test, not blindly enforce:** preserve T3 Code's client/server, semantic event-sourced architecture, terminal contracts, and first-party web/mobile terminal stack; federate independently operational BleedingADE servers; prioritize excellent web/mobile use; use a provider-neutral subordinate Placement boundary with AgentBox as the first optional adapter and a direct Lima/Incus adapter only as a prototype-gated later candidate; treat Locki as architecture evidence, not an adapter; integrate Jeffrey Emanuel's `beads_rust` through supported `br` surfaces while providing a native graph/triage experience; support Oh My Pi, Prime Agent/RLM, and Claude Code workflows through typed adapters where truthful; require Herdr and broader Agent Flywheel components to prove distinct value.
 
 **Owner-set constraints:**
 
@@ -52,6 +52,7 @@ An evidence-backed, decision-complete product and architecture definition for Bl
 - [Research Agent Flywheel components for history, memory, coordination, and orchestration](https://github.com/BleedingDev/bleeding-ade/issues/25): keep Flywheel components optional and non-authoritative—CASS may index replicated T3 history, Eidetic Engine is a later memory probe, Agent Mail is peer coordination, and NTM is at most a terminal backend rather than product navigation or authority.
 - [Define `br` task authority and native graph intelligence](https://github.com/BleedingDev/bleeding-ade/issues/13): give each Project one independently movable current Task Authority, route strong mutations through its capability-probed Server adapter, keep Replicas explicitly read-only or eventual, and compute fingerprinted native Graph Projections with runtime overlays.
 - [Choose the federated BleedingADE server and placement topology](https://github.com/BleedingDev/bleeding-ade/issues/9): use client-first federation of independent Servers with direct T3-supervised control, record-specific authority, optional designated Replicas, and provider-neutral subordinate Placements led by AgentBox as the first optional adapter.
+- [Research Lima/Incus and Locki as a local Placement foundation](https://github.com/BleedingDev/bleeding-ade/issues/26): reject Locki as an adapter, retain its shared-Lima-VM/Incus density pattern as evidence, and defer a direct Lima/Incus adapter until [Prototype the direct Lima/Incus Placement boundary on Apple Silicon and Linux KVM](https://github.com/BleedingDev/bleeding-ade/issues/27) proves mounts, recovery, hostile-sibling isolation, nested workloads, and scale.
 
 ## Not yet specified
 
@@ -98,12 +99,13 @@ GitHub issue relationships and blocker links are canonical; this list is the rea
 - [x] [Research semantic integration surfaces for OMP, Prime Agent, and Claude workflows](https://github.com/BleedingDev/bleeding-ade/issues/23)
 - [x] [Research beads_rust data, synchronization, and native graph-intelligence boundaries](https://github.com/BleedingDev/bleeding-ade/issues/24)
 - [x] [Research Agent Flywheel components for history, memory, coordination, and orchestration](https://github.com/BleedingDev/bleeding-ade/issues/25)
+- [x] [Research Lima/Incus and Locki as a local Placement foundation](https://github.com/BleedingDev/bleeding-ade/issues/26)
 
 ### Current frontier
 
 - [ ] [Choose logical-chat identity, continuity, and handover semantics](https://github.com/BleedingDev/bleeding-ade/issues/10) — HITL, unclaimed
 - [ ] [Choose the origin-qualified semantic event fabric and capability contract](https://github.com/BleedingDev/bleeding-ade/issues/11) — HITL, unclaimed
-- [ ] [Research Lima/Incus and Locki as a local Placement foundation](https://github.com/BleedingDev/bleeding-ade/issues/26) — AFK research, unclaimed
+- [ ] [Prototype the direct Lima/Incus Placement boundary on Apple Silicon and Linux KVM](https://github.com/BleedingDev/bleeding-ade/issues/27) — HITL conformance prototype, unclaimed
 
 ### Blocked decisions
 
