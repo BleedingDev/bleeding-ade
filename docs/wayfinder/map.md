@@ -39,6 +39,7 @@ An evidence-backed, decision-complete product and architecture definition for Bl
 - [Research AgentBox execution-location, checkpoint, and handover primitives](https://github.com/BleedingDev/bleeding-ade/issues/21): use AgentBox, if included, as an optional per-server placement adapter; BleedingADE must own semantic identity, portable handover, and fencing because provider-local checkpoints and resume do not migrate live execution.
 - [Research Herdr's incremental value and the terminal fallback stack](https://github.com/BleedingDev/bleeding-ade/issues/22): defer Herdr and retain only a conditional leaf-adapter option for terminal-only runtimes; the T3-style server should own semantic state and process lifecycle while `ghostty-web` supplies browser terminal rendering.
 - [Research semantic integration surfaces for OMP, Prime Agent, and Claude workflows](https://github.com/BleedingDev/bleeding-ade/issues/23): the strongest primary boundaries are OMP RPC, Prime RPC, Claude Agent SDK, and T3 typed provider adapters; Prime daemon and runtime-native multi-client transports remain optional higher-risk surfaces.
+- [Research beads_rust data, synchronization, and native graph-intelligence boundaries](https://github.com/BleedingDev/bleeding-ade/issues/24): `br` owns project-scoped task/workflow state in local SQLite with explicit JSONL/Git interchange; BleedingADE owns stable project identity, movable task authority, federated execution leases, minimal provenance, and fingerprinted native graph intelligence rather than inventing a nonexistent shared Beads service.
 - [Research Agent Flywheel components for history, memory, coordination, and orchestration](https://github.com/BleedingDev/bleeding-ade/issues/25): keep Flywheel components optional and non-authoritative—CASS may index replicated T3 history, Eidetic Engine is a later memory probe, Agent Mail is peer coordination, and NTM is at most a terminal backend rather than product navigation or authority.
 
 ## Not yet specified
@@ -75,19 +76,16 @@ GitHub issues remain canonical; this is a readable mirror.
 - [x] [Research AgentBox execution-location, checkpoint, and handover primitives](https://github.com/BleedingDev/bleeding-ade/issues/21)
 - [x] [Research Herdr's incremental value and the terminal fallback stack](https://github.com/BleedingDev/bleeding-ade/issues/22)
 - [x] [Research semantic integration surfaces for OMP, Prime Agent, and Claude workflows](https://github.com/BleedingDev/bleeding-ade/issues/23)
+- [x] [Research beads_rust data, synchronization, and native graph-intelligence boundaries](https://github.com/BleedingDev/bleeding-ade/issues/24)
 - [x] [Research Agent Flywheel components for history, memory, coordination, and orchestration](https://github.com/BleedingDev/bleeding-ade/issues/25)
 
-### Current HITL frontier
+### Current frontier
 
-- [ ] [Define deployment, trust, privacy, and ownership assumptions](https://github.com/BleedingDev/bleeding-ade/issues/7)
-
-### Parallel AFK research frontier
-
-- [ ] [Research beads_rust data, synchronization, and native graph-intelligence boundaries](https://github.com/BleedingDev/bleeding-ade/issues/24)
+- [ ] [Define deployment, trust, privacy, and ownership assumptions](https://github.com/BleedingDev/bleeding-ade/issues/7) — HITL
+- [ ] [Synthesize the candidate ecosystem and integration strategy](https://github.com/BleedingDev/bleeding-ade/issues/5) — AFK
 
 ### Blocked decisions
 
-- [ ] [Synthesize the candidate ecosystem and integration strategy](https://github.com/BleedingDev/bleeding-ade/issues/5)
 - [ ] [Define the canonical BleedingADE domain language](https://github.com/BleedingDev/bleeding-ade/issues/8)
 - [ ] [Choose the T3 Code, AgentBox, and Herdr execution topology](https://github.com/BleedingDev/bleeding-ade/issues/9)
 - [ ] [Choose session identity, continuity, and handover semantics](https://github.com/BleedingDev/bleeding-ade/issues/10)
