@@ -4,9 +4,9 @@ This is evidence for Wayfinder tickets, not a final architecture decision. Every
 
 | Candidate | Authoritative source | Preliminary programmatic surface | Primary uncertainty |
 |---|---|---|---|
-| T3 Code | [`pingdotgg/t3code`](https://github.com/pingdotgg/t3code) | Authenticated Effect RPC WebSocket; event-sourced orchestration; provider drivers; shared web/mobile client runtime; remote execution environments. | Which extensions remain upstream-friendly and which require a durable fork? |
+| T3 Code | [`pingdotgg/t3code`](https://github.com/pingdotgg/t3code) | Authenticated Effect RPC WebSocket; event-sourced orchestration; provider drivers; shared web/mobile client runtime; remote execution environments; server-owned PTYs and terminal contracts; existing `libghostty-vt` web/Android renderers. | Which extensions remain upstream-friendly and which require a durable fork? |
 | AgentBox | [`madarco/agentbox`](https://github.com/madarco/agentbox) | Local/cloud box provider abstraction; lifecycle, checkpoints, pause/resume; Hub REST API for boxes, jobs, approvals, projects, and logs. | Should T3 run inside each box, and which control-plane writes are stable across all providers? |
-| Herdr | [`herdrdev/herdr`](https://github.com/herdrdev/herdr) | Persistent server-owned PTYs; local socket JSON schema; snapshots/events; agent control; terminal observer/controller; named and remote sessions. | Does it provide a narrow capability behind T3, or become a conflicting second owner? |
+| Herdr | [`herdrdev/herdr`](https://github.com/herdrdev/herdr) | Persistent server-owned PTYs; local socket JSON schema; snapshots/events; agent control; terminal observer/controller; named and remote sessions. | Does it provide unique value beyond T3's existing terminal stack for otherwise terminal-only runtimes? |
 | Beads Rust (`br`) | [`Dicklesworthstone/beads_rust`](https://github.com/Dicklesworthstone/beads_rust) | Local-first SQLite task graph; JSONL git interchange/synchronization; structured JSON/TOON/robot CLI; capabilities, MCP, skills, coordination and recovery tooling. | Exact authority/sync contract across federated servers, and which mutations belong behind a thin `br` skill or server adapter? |
 | Beads Viewer | [`Dicklesworthstone/beads_viewer`](https://github.com/Dicklesworthstone/beads_viewer) | Reads Beads Rust-compatible JSONL; robot JSON/TOON; graph, critical path, PageRank, alerts, planning, and HTML export. | Which behaviors/algorithms should BleedingADE reproduce natively and which should remain optional analysis? |
 | Oh My Pi | [`can1357/oh-my-pi`](https://github.com/can1357/oh-my-pi) | Rich coding runtime; subagents; Agent Hub; ACP; collaboration; session restore and multiple provider/tool surfaces. | Stable headless lifecycle, transcript, tool, approval, and child-agent event boundary. |
@@ -21,17 +21,17 @@ This is evidence for Wayfinder tickets, not a final architecture decision. Every
 
 ### T3 Code already contains much of the desired semantic control-plane skeleton
 
-Its documented architecture has one server execution boundary, authenticated method-level RPC, shared nonvisual web/mobile state, event-sourced orchestration, provider adapters, idempotent commands, remote environment identity, and reconnecting clients.
+Its documented architecture has one server execution boundary, authenticated method-level RPC, shared nonvisual web/mobile state, event-sourced orchestration, provider adapters, idempotent commands, remote environment identity, reconnecting clients, server-owned PTYs, terminal RPC contracts, and first-party web/mobile terminal renderers built on `libghostty-vt`.
 
-Therefore **extend T3** is a credible default. It also means replacing T3's server with AgentBox or Herdr would discard useful semantics unless those tools are placed behind narrower capabilities.
+Therefore **extend T3** is a credible default. It also means replacing T3's server with AgentBox or Herdr—or adding `coder/ghostty-web` as a parallel terminal dependency—would duplicate useful existing capability unless a focused probe proves a missing requirement.
 
 ### AgentBox and Herdr solve different layers, but both overlap T3
 
 A plausible split to test:
 
-- AgentBox owns **where an isolated execution location exists** and its provider-specific lifecycle.
-- Herdr optionally owns **durable PTY/process control** for terminal-native runtimes or diagnostics.
-- T3/BleedingADE owns **projects, threads, semantic sessions, commands, events, authorization, and client projections**.
+- AgentBox optionally owns **where an isolated execution location exists** and its provider-specific lifecycle.
+- Herdr is considered only as a deferred leaf adapter for otherwise terminal-only runtimes if it proves unique value beyond T3's terminal stack.
+- T3/BleedingADE owns **projects, threads, semantic sessions, commands, events, authorization, client projections, PTYs, terminal streams, and current terminal rendering surfaces**.
 
 The execution-topology decision must assign exactly one authoritative owner for every lifecycle.
 
