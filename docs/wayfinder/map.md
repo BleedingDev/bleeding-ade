@@ -49,6 +49,7 @@ An evidence-backed, decision-complete product and architecture definition for Bl
 - [Research semantic integration surfaces for OMP, Prime Agent, and Claude workflows](https://github.com/BleedingDev/bleeding-ade/issues/23): the strongest primary boundaries are OMP RPC, Prime RPC, Claude Agent SDK, and T3 typed provider adapters; Prime daemon and runtime-native multi-client transports remain optional higher-risk surfaces.
 - [Research beads_rust data, synchronization, and native graph-intelligence boundaries](https://github.com/BleedingDev/bleeding-ade/issues/24): `br` owns project-scoped task/workflow state in local SQLite with explicit JSONL/Git interchange; BleedingADE owns stable project identity, movable task authority, federated execution leases, minimal provenance, and fingerprinted native graph intelligence rather than inventing a nonexistent shared Beads service.
 - [Research Agent Flywheel components for history, memory, coordination, and orchestration](https://github.com/BleedingDev/bleeding-ade/issues/25): keep Flywheel components optional and non-authoritative—CASS may index replicated T3 history, Eidetic Engine is a later memory probe, Agent Mail is peer coordination, and NTM is at most a terminal backend rather than product navigation or authority.
+- [Define `br` task authority and native graph intelligence](https://github.com/BleedingDev/bleeding-ade/issues/13): give each Project one independently movable current Task Authority, route strong mutations through its capability-probed Server adapter, keep Replicas explicitly read-only or eventual, and compute fingerprinted native Graph Projections with runtime overlays.
 
 ## Not yet specified
 
@@ -88,6 +89,7 @@ GitHub issue relationships and blocker links are canonical; this list is the rea
 - [x] [Research T3 Code federation, replication, and extension seams](https://github.com/BleedingDev/bleeding-ade/issues/6)
 - [x] [Define deployment, trust, privacy, and ownership assumptions](https://github.com/BleedingDev/bleeding-ade/issues/7)
 - [x] [Define the canonical BleedingADE domain language](https://github.com/BleedingDev/bleeding-ade/issues/8)
+- [x] [Define `br` task authority and native graph intelligence](https://github.com/BleedingDev/bleeding-ade/issues/13)
 - [x] [Research AgentBox execution-location, checkpoint, and handover primitives](https://github.com/BleedingDev/bleeding-ade/issues/21)
 - [x] [Research Herdr's incremental value and the terminal fallback stack](https://github.com/BleedingDev/bleeding-ade/issues/22)
 - [x] [Research semantic integration surfaces for OMP, Prime Agent, and Claude workflows](https://github.com/BleedingDev/bleeding-ade/issues/23)
@@ -97,7 +99,6 @@ GitHub issue relationships and blocker links are canonical; this list is the rea
 ### Current frontier
 
 - [ ] [Choose the federated BleedingADE server and placement topology](https://github.com/BleedingDev/bleeding-ade/issues/9) — HITL, unclaimed
-- [ ] [Define `br` task authority and native graph intelligence](https://github.com/BleedingDev/bleeding-ade/issues/13) — HITL, unclaimed
 
 ### Blocked decisions
 
