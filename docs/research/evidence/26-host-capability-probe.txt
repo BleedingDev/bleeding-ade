@@ -1,0 +1,67 @@
+Host capability probe for issue 26
+==================================
+
+Purpose
+-------
+Establish which requested Lima, Incus, Locki, Docker/Podman, BuildKit, Kubernetes,
+mount, lifecycle, reboot, and resource probes could truthfully run on the available
+research execution Host.
+
+Measured at
+-----------
+2026-08-23T20:17:56Z
+
+Observed output
+---------------
+timestamp_utc=2026-08-23T20:17:56Z
+os=Debian GNU/Linux 13 (trixie) trixie
+kernel=Linux 6.18.35 x86_64 GNU/Linux
+arch=x86_64
+cpus=5
+mem_kib=6219544
+pid1=supervisord
+cgroup=cgroup2fs
+rootfs=ext4
+/dev/kvm=absent
+/dev/vhost-vsock=absent
+/dev/net/tun=absent
+command_limactl=absent
+command_lima=absent
+command_qemu-system-x86_64=absent
+command_qemu-system-aarch64=absent
+command_incus=absent
+command_lxc=absent
+command_docker=absent
+command_podman=absent
+command_nerdctl=absent
+command_buildctl=absent
+command_k3s=absent
+command_kubectl=absent
+command_systemctl=/usr/bin/systemctl
+dns_github=failed
+unprivileged_user_namespace=works
+mount_namespace=denied unshare: unshare failed: Operation not permitted
+systemd=unavailable
+
+Interpretation
+--------------
+MEASURED: The runner is a restricted Debian container with cgroup v2 and an ext4
+root filesystem. It has no KVM, TUN, vhost-vsock, Lima/QEMU, Incus/LXC,
+Docker/Podman, BuildKit, k3s, or kubectl. Although the systemctl client exists,
+PID 1 is supervisord and systemd is unavailable. An unprivileged user namespace
+can be created, but a mount namespace cannot. DNS resolution for github.com is
+unavailable.
+
+Consequences
+------------
+UNVERIFIED BECAUSE OF HOST/PLATFORM LIMITATIONS: cold Lima startup, warm Incus
+creation, idle/restart behavior, memory/disk overhead, Lima mount correctness,
+file-watching across a VM mount, port forwarding, nested Compose/BuildKit,
+k3s/Kubernetes, Host reboot, VM recreation, Incus recovery, stale-state cleanup,
+and cross-sandbox attacks could not be executed here.
+
+No substitute native-filesystem or process test is presented as evidence for a
+Lima/Incus boundary. Runtime conclusions in the accompanying research document
+are explicitly marked source-derived, inferred, or unverified. Primary-source
+inspection was performed through authenticated GitHub access at immutable
+revisions.
