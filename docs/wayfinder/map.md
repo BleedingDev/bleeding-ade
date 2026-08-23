@@ -8,7 +8,7 @@ An evidence-backed, decision-complete product and architecture definition for Bl
 
 **Mode:** planning only. This map resolves decisions; it does not implement the product.
 
-**Strong priors to test, not blindly enforce:** preserve T3 Code's client/server, semantic event-sourced architecture, terminal contracts, and first-party web/mobile terminal stack; federate independently operational BleedingADE servers; prioritize excellent web/mobile use; validate AgentBox for isolated/resumable execution placement and handover; integrate Jeffrey Emanuel's `beads_rust` through supported `br` surfaces while providing a native graph/triage experience; support Oh My Pi, Prime Agent/RLM, and Claude Code workflows through typed adapters where truthful; require Herdr and broader Agent Flywheel components to prove distinct value.
+**Strong priors to test, not blindly enforce:** preserve T3 Code's client/server, semantic event-sourced architecture, terminal contracts, and first-party web/mobile terminal stack; federate independently operational BleedingADE servers; prioritize excellent web/mobile use; use a provider-neutral subordinate Placement boundary with AgentBox as the first optional adapter and Lima/Locki as a later research candidate; integrate Jeffrey Emanuel's `beads_rust` through supported `br` surfaces while providing a native graph/triage experience; support Oh My Pi, Prime Agent/RLM, and Claude Code workflows through typed adapters where truthful; require Herdr and broader Agent Flywheel components to prove distinct value.
 
 **Owner-set constraints:**
 
@@ -20,6 +20,7 @@ An evidence-backed, decision-complete product and architecture definition for Bl
 - Reuse T3 Code's existing server-owned PTYs, terminal contracts, and `libghostty-vt` web/mobile renderers. `coder/ghostty-web` is not a required BleedingADE dependency.
 - Each BleedingADE server must remain independently useful; optional replication/aggregation must not become a central execution authority or single point of failure.
 - Reuse T3 Code's existing connection targets, pairing, scoped authorization, client sessions, revocation, WebSocket tickets, and DPoP behavior. Do not build a second networking or device-authentication subsystem.
+- Placement is provider-neutral. AgentBox is the first optional adapter; every backend remains capability-gated, core operation cannot depend on it, and later adapters may be added without changing product authority.
 - Full local/federated statistics and telemetry are required. External telemetry and organization/multi-tenant reporting are later product work.
 - Trusted replicas and local search may store full-fidelity canonical history; v1 does not add redaction, pseudonymization, or replication-time mangling. Credentials remain server-local and must not be transferred through ordinary history or handover.
 - Agent Mail, CASS, NTM, Herdr, and other optional components are included only when research demonstrates unique product value and a viable boundary.
@@ -50,6 +51,7 @@ An evidence-backed, decision-complete product and architecture definition for Bl
 - [Research beads_rust data, synchronization, and native graph-intelligence boundaries](https://github.com/BleedingDev/bleeding-ade/issues/24): `br` owns project-scoped task/workflow state in local SQLite with explicit JSONL/Git interchange; BleedingADE owns stable project identity, movable task authority, federated execution leases, minimal provenance, and fingerprinted native graph intelligence rather than inventing a nonexistent shared Beads service.
 - [Research Agent Flywheel components for history, memory, coordination, and orchestration](https://github.com/BleedingDev/bleeding-ade/issues/25): keep Flywheel components optional and non-authoritative—CASS may index replicated T3 history, Eidetic Engine is a later memory probe, Agent Mail is peer coordination, and NTM is at most a terminal backend rather than product navigation or authority.
 - [Define `br` task authority and native graph intelligence](https://github.com/BleedingDev/bleeding-ade/issues/13): give each Project one independently movable current Task Authority, route strong mutations through its capability-probed Server adapter, keep Replicas explicitly read-only or eventual, and compute fingerprinted native Graph Projections with runtime overlays.
+- [Choose the federated BleedingADE server and placement topology](https://github.com/BleedingDev/bleeding-ade/issues/9): use client-first federation of independent Servers with direct T3-supervised control, record-specific authority, optional designated Replicas, and provider-neutral subordinate Placements led by AgentBox as the first optional adapter.
 
 ## Not yet specified
 
@@ -89,6 +91,7 @@ GitHub issue relationships and blocker links are canonical; this list is the rea
 - [x] [Research T3 Code federation, replication, and extension seams](https://github.com/BleedingDev/bleeding-ade/issues/6)
 - [x] [Define deployment, trust, privacy, and ownership assumptions](https://github.com/BleedingDev/bleeding-ade/issues/7)
 - [x] [Define the canonical BleedingADE domain language](https://github.com/BleedingDev/bleeding-ade/issues/8)
+- [x] [Choose the federated BleedingADE server and placement topology](https://github.com/BleedingDev/bleeding-ade/issues/9)
 - [x] [Define `br` task authority and native graph intelligence](https://github.com/BleedingDev/bleeding-ade/issues/13)
 - [x] [Research AgentBox execution-location, checkpoint, and handover primitives](https://github.com/BleedingDev/bleeding-ade/issues/21)
 - [x] [Research Herdr's incremental value and the terminal fallback stack](https://github.com/BleedingDev/bleeding-ade/issues/22)
@@ -98,12 +101,12 @@ GitHub issue relationships and blocker links are canonical; this list is the rea
 
 ### Current frontier
 
-- [ ] [Choose the federated BleedingADE server and placement topology](https://github.com/BleedingDev/bleeding-ade/issues/9) — HITL, unclaimed
+- [ ] [Choose logical-chat identity, continuity, and handover semantics](https://github.com/BleedingDev/bleeding-ade/issues/10) — HITL, unclaimed
+- [ ] [Choose the origin-qualified semantic event fabric and capability contract](https://github.com/BleedingDev/bleeding-ade/issues/11) — HITL, unclaimed
+- [ ] [Research Lima/Incus and Locki as a local Placement foundation](https://github.com/BleedingDev/bleeding-ade/issues/26) — AFK research, unclaimed
 
 ### Blocked decisions
 
-- [ ] [Choose logical-chat identity, continuity, and handover semantics](https://github.com/BleedingDev/bleeding-ade/issues/10)
-- [ ] [Choose the origin-qualified semantic event fabric and capability contract](https://github.com/BleedingDev/bleeding-ade/issues/11)
 - [ ] [Prove runtime-adapter conformance for T3 providers, OMP, Prime, and Claude workflows](https://github.com/BleedingDev/bleeding-ade/issues/12)
 - [ ] [Prototype the project-first web and mobile information architecture](https://github.com/BleedingDev/bleeding-ade/issues/14)
 - [ ] [Define global attention inbox semantics and interruption policy](https://github.com/BleedingDev/bleeding-ade/issues/15)
