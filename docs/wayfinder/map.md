@@ -19,6 +19,7 @@ An evidence-backed, decision-complete product and architecture definition for Bl
 - Web and mobile are first-class; a native desktop application is not initially required.
 - Reuse T3 Code's existing server-owned PTYs, terminal contracts, and `libghostty-vt` web/mobile renderers. `coder/ghostty-web` is not a required BleedingADE dependency.
 - Each BleedingADE server must remain independently useful; optional replication/aggregation must not become a central execution authority or single point of failure.
+- Reuse T3 Code's existing connection targets, pairing, scoped authorization, client sessions, revocation, WebSocket tickets, and DPoP behavior. Do not build a second networking or device-authentication subsystem.
 - Full local/federated statistics and telemetry are required. External telemetry and organization/multi-tenant reporting are later product work.
 - Trusted replicas and local search may store full-fidelity canonical history; v1 does not add redaction, pseudonymization, or replication-time mangling. Credentials remain server-local and must not be transferred through ordinary history or handover.
 - Agent Mail, CASS, NTM, Herdr, and other optional components are included only when research demonstrates unique product value and a viable boundary.
@@ -40,6 +41,7 @@ An evidence-backed, decision-complete product and architecture definition for Bl
 - [Reconcile the product promises and set hard non-goals](https://github.com/BleedingDev/bleeding-ade/issues/4): v1 requires first-class web/mobile fleet control, global operations plus project-scoped work, T3 provider preservation, capability-gated external runtimes, native `br` graph/triage/statistics, and relocate/takeover/debug-fork; it excludes teams, mandatory native desktop, mobile IDE behavior, live process migration, central execution authority, exhaustive Viewer parity, and unproven optional components.
 - [Synthesize the candidate ecosystem and integration strategy](https://github.com/BleedingDev/bleeding-ade/issues/5): use one federated T3-derived semantic core; keep AgentBox, CASS, Herdr/NTM, memory, and peer coordination replaceable at the edges; integrate OMP RPC, Prime RPC, Claude Agent SDK, and `br` through capability-tested boundaries while reusing T3's own terminal implementation.
 - [Research T3 Code federation, replication, and extension seams](https://github.com/BleedingDev/bleeding-ade/issues/6): reuse T3's multi-environment client runtime, keep each server authoritative for local execution and history, and add an origin-qualified execution-segment DAG plus designated-peer read-only replication rather than merging local event sequences or centralizing execution.
+- [Define deployment, trust, privacy, and ownership assumptions](https://github.com/BleedingDev/bleeding-ade/issues/7): v1 is one operator with many paired clients and independent servers; it reuses T3 access/auth, allows explicitly selected hosts to hold full source, keeps credentials server-local, lets any authorized client control work, resolves approvals only at their origin server, permits full-fidelity trusted replication/search, and keeps external telemetry for later.
 - [Research AgentBox execution-location, checkpoint, and handover primitives](https://github.com/BleedingDev/bleeding-ade/issues/21): use AgentBox, if included, as an optional per-server placement adapter; BleedingADE must own semantic identity, portable handover, and fencing because provider-local checkpoints and resume do not migrate live execution.
 - [Research Herdr's incremental value and the terminal fallback stack](https://github.com/BleedingDev/bleeding-ade/issues/22): defer Herdr and retain only a conditional leaf-adapter option for otherwise terminal-only runtimes; reuse T3's existing PTY contracts and first-party `libghostty-vt` renderers rather than adding a parallel terminal stack.
 - [Research semantic integration surfaces for OMP, Prime Agent, and Claude workflows](https://github.com/BleedingDev/bleeding-ade/issues/23): the strongest primary boundaries are OMP RPC, Prime RPC, Claude Agent SDK, and T3 typed provider adapters; Prime daemon and runtime-native multi-client transports remain optional higher-risk surfaces.
@@ -67,6 +69,7 @@ An evidence-backed, decision-complete product and architecture definition for Bl
 - A terminal/tmux/NTM dashboard as BleedingADE's primary information architecture.
 - Copying or embedding Beads Viewer or the Wayfinder Obsidian plugin.
 - Exhaustive Beads Viewer parity, universal Bead-to-every-entity relationships, or special multiple-epic orchestration in v1.
+- Placement/provider restriction policies in v1.
 - Replication-time redaction, pseudonymization, or history mangling in v1.
 - Pretending unavailable integrations, semantic events, or migration capabilities exist.
 - Live OS-process migration in the initial product; relocate, takeover, and debug-fork remain in scope.
@@ -81,6 +84,7 @@ GitHub issue relationships and blocker links are canonical; this list is the rea
 - [x] [Reconcile the product promises and set hard non-goals](https://github.com/BleedingDev/bleeding-ade/issues/4)
 - [x] [Synthesize the candidate ecosystem and integration strategy](https://github.com/BleedingDev/bleeding-ade/issues/5)
 - [x] [Research T3 Code federation, replication, and extension seams](https://github.com/BleedingDev/bleeding-ade/issues/6)
+- [x] [Define deployment, trust, privacy, and ownership assumptions](https://github.com/BleedingDev/bleeding-ade/issues/7)
 - [x] [Research AgentBox execution-location, checkpoint, and handover primitives](https://github.com/BleedingDev/bleeding-ade/issues/21)
 - [x] [Research Herdr's incremental value and the terminal fallback stack](https://github.com/BleedingDev/bleeding-ade/issues/22)
 - [x] [Research semantic integration surfaces for OMP, Prime Agent, and Claude workflows](https://github.com/BleedingDev/bleeding-ade/issues/23)
@@ -89,8 +93,7 @@ GitHub issue relationships and blocker links are canonical; this list is the rea
 
 ### Current frontier
 
-- [ ] [Define deployment, trust, privacy, and ownership assumptions](https://github.com/BleedingDev/bleeding-ade/issues/7) — HITL, claimed in this conversation
-- [ ] [Define the canonical BleedingADE domain language](https://github.com/BleedingDev/bleeding-ade/issues/8) — HITL, unclaimed
+- [ ] [Define the canonical BleedingADE domain language](https://github.com/BleedingDev/bleeding-ade/issues/8) — HITL, claimed in this conversation
 
 ### Blocked decisions
 
