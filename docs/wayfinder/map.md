@@ -53,6 +53,7 @@ An evidence-backed, decision-complete product and architecture definition for Bl
 - [Define `br` task authority and native graph intelligence](https://github.com/BleedingDev/bleeding-ade/issues/13): give each Project one independently movable current Task Authority, route strong mutations through its capability-probed Server adapter, keep Replicas explicitly read-only or eventual, and compute fingerprinted native Graph Projections with runtime overlays.
 - [Choose the federated BleedingADE server and placement topology](https://github.com/BleedingDev/bleeding-ade/issues/9): use client-first federation of independent Servers with direct T3-supervised control, record-specific authority, optional designated Replicas, and provider-neutral subordinate Placements led by AgentBox as the first optional adapter.
 - [Research Lima/Incus and Locki as a local Placement foundation](https://github.com/BleedingDev/bleeding-ade/issues/26): reject Locki as an adapter, retain its shared-Lima-VM/Incus density pattern as evidence, and defer a direct Lima/Incus adapter until [Prototype the direct Lima/Incus Placement boundary on Apple Silicon and Linux KVM](https://github.com/BleedingDev/bleeding-ade/issues/27) proves mounts, recovery, hostile-sibling isolation, nested workloads, and scale.
+- [Choose the origin-qualified semantic event fabric and capability contract](https://github.com/BleedingDev/bleeding-ade/issues/11): use four explicit semantic layers, global logical IDs with qualified local references, one hash-chained Origin Feed per Server lineage, exact-target idempotent commands, append-only replay/corrections, and internal evidence-backed Runtime degradation without global ordering or Replica authority.
 
 ## Not yet specified
 
@@ -93,6 +94,7 @@ GitHub issue relationships and blocker links are canonical; this list is the rea
 - [x] [Define deployment, trust, privacy, and ownership assumptions](https://github.com/BleedingDev/bleeding-ade/issues/7)
 - [x] [Define the canonical BleedingADE domain language](https://github.com/BleedingDev/bleeding-ade/issues/8)
 - [x] [Choose the federated BleedingADE server and placement topology](https://github.com/BleedingDev/bleeding-ade/issues/9)
+- [x] [Choose the origin-qualified semantic event fabric and capability contract](https://github.com/BleedingDev/bleeding-ade/issues/11)
 - [x] [Define `br` task authority and native graph intelligence](https://github.com/BleedingDev/bleeding-ade/issues/13)
 - [x] [Research AgentBox execution-location, checkpoint, and handover primitives](https://github.com/BleedingDev/bleeding-ade/issues/21)
 - [x] [Research Herdr's incremental value and the terminal fallback stack](https://github.com/BleedingDev/bleeding-ade/issues/22)
@@ -103,16 +105,18 @@ GitHub issue relationships and blocker links are canonical; this list is the rea
 
 ### Current frontier
 
-- [ ] [Choose logical-chat identity, continuity, and handover semantics](https://github.com/BleedingDev/bleeding-ade/issues/10) — HITL, unclaimed
-- [ ] [Choose the origin-qualified semantic event fabric and capability contract](https://github.com/BleedingDev/bleeding-ade/issues/11) — HITL, unclaimed
-- [ ] [Prototype the direct Lima/Incus Placement boundary on Apple Silicon and Linux KVM](https://github.com/BleedingDev/bleeding-ade/issues/27) — HITL conformance prototype, unclaimed
+- [ ] [Prove runtime-adapter conformance for T3 providers, OMP, Prime, and Claude workflows](https://github.com/BleedingDev/bleeding-ade/issues/12) — HITL conformance prototype, unclaimed
+- [ ] [Prototype the project-first web and mobile information architecture](https://github.com/BleedingDev/bleeding-ade/issues/14) — HITL information-architecture prototype, unclaimed
+- [ ] [Choose optional search, memory, coordination, and terminal adapters](https://github.com/BleedingDev/bleeding-ade/issues/16) — HITL, unclaimed
+
+### Claimed / in progress
+
+- [ ] [Choose logical-chat identity, continuity, and handover semantics](https://github.com/BleedingDev/bleeding-ade/issues/10) — HITL, claimed
+- [ ] [Prototype the direct Lima/Incus Placement boundary on Apple Silicon and Linux KVM](https://github.com/BleedingDev/bleeding-ade/issues/27) — HITL conformance prototype, claimed
 
 ### Blocked decisions
 
-- [ ] [Prove runtime-adapter conformance for T3 providers, OMP, Prime, and Claude workflows](https://github.com/BleedingDev/bleeding-ade/issues/12)
-- [ ] [Prototype the project-first web and mobile information architecture](https://github.com/BleedingDev/bleeding-ade/issues/14)
 - [ ] [Define global attention inbox semantics and interruption policy](https://github.com/BleedingDev/bleeding-ade/issues/15)
-- [ ] [Choose optional search, memory, coordination, and terminal adapters](https://github.com/BleedingDev/bleeding-ade/issues/16)
 - [ ] [Define federation failure, recovery, concurrency, and security invariants](https://github.com/BleedingDev/bleeding-ade/issues/17)
 - [ ] [Define the minimum coherent release and its acceptance proof](https://github.com/BleedingDev/bleeding-ade/issues/18)
 - [ ] [Choose repository, fork, and upstream strategy](https://github.com/BleedingDev/bleeding-ade/issues/19)
