@@ -29,6 +29,7 @@ An evidence-backed, decision-complete product and architecture definition for Bl
 
 - Consult Matt Pocock's Wayfinder and domain-modeling/grilling methods.
 - Ground HITL decisions in concrete workflows.
+- Keep HITL questions at business/user-visible trade-off level; resolve protocol mechanics autonomously unless alternatives materially change product behavior.
 - Prefer official source code and executable boundary probes over summaries.
 - Use the canonical vocabulary in [`CONTEXT.md`](../../CONTEXT.md).
 - Do not let terminal, tmux, NTM, Herdr panes, or box topology define the primary UX.
@@ -54,6 +55,7 @@ An evidence-backed, decision-complete product and architecture definition for Bl
 - [Choose the federated BleedingADE server and placement topology](https://github.com/BleedingDev/bleeding-ade/issues/9): use client-first federation of independent Servers with direct T3-supervised control, record-specific authority, optional designated Replicas, and provider-neutral subordinate Placements led by AgentBox as the first optional adapter.
 - [Research Lima/Incus and Locki as a local Placement foundation](https://github.com/BleedingDev/bleeding-ade/issues/26): reject Locki as an adapter, retain its shared-Lima-VM/Incus density pattern as evidence, and defer a direct Lima/Incus adapter until [Prototype the direct Lima/Incus Placement boundary on Apple Silicon and Linux KVM](https://github.com/BleedingDev/bleeding-ade/issues/27) proves mounts, recovery, hostile-sibling isolation, nested workloads, and scale.
 - [Choose the origin-qualified semantic event fabric and capability contract](https://github.com/BleedingDev/bleeding-ade/issues/11): use four explicit semantic layers, global logical IDs with qualified local references, one hash-chained Origin Feed per Server lineage, exact-target idempotent commands, append-only replay/corrections, and internal evidence-backed Runtime degradation without global ordering or Replica authority.
+- [Choose logical-chat identity, continuity, and handover semantics](https://github.com/BleedingDev/bleeding-ade/issues/10): keep the Chat stable while moving laptop↔cloud through new Execution Segments, preserve T3/Beads/files/history, reconstruct provider context when native resume is unavailable, and expose debug/recovery as explicit Branches without live-process migration.
 
 ## Not yet specified
 
@@ -94,6 +96,7 @@ GitHub issue relationships and blocker links are canonical; this list is the rea
 - [x] [Define deployment, trust, privacy, and ownership assumptions](https://github.com/BleedingDev/bleeding-ade/issues/7)
 - [x] [Define the canonical BleedingADE domain language](https://github.com/BleedingDev/bleeding-ade/issues/8)
 - [x] [Choose the federated BleedingADE server and placement topology](https://github.com/BleedingDev/bleeding-ade/issues/9)
+- [x] [Choose logical-chat identity, continuity, and handover semantics](https://github.com/BleedingDev/bleeding-ade/issues/10)
 - [x] [Choose the origin-qualified semantic event fabric and capability contract](https://github.com/BleedingDev/bleeding-ade/issues/11)
 - [x] [Define `br` task authority and native graph intelligence](https://github.com/BleedingDev/bleeding-ade/issues/13)
 - [x] [Research AgentBox execution-location, checkpoint, and handover primitives](https://github.com/BleedingDev/bleeding-ade/issues/21)
@@ -111,7 +114,6 @@ GitHub issue relationships and blocker links are canonical; this list is the rea
 
 ### Claimed / in progress
 
-- [ ] [Choose logical-chat identity, continuity, and handover semantics](https://github.com/BleedingDev/bleeding-ade/issues/10) — HITL, claimed
 - [ ] [Prototype the direct Lima/Incus Placement boundary on Apple Silicon and Linux KVM](https://github.com/BleedingDev/bleeding-ade/issues/27) — HITL conformance prototype, claimed
 
 ### Blocked decisions
